@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>San Joaquin Valley Town Hall</title>
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="stylesheet" href="styles/c7_main.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="js/jquery.slicknav.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#nav_menu').slicknav({prependTo: "#mobile_menu"});
+		});
+	</script>
+</head>
+
+<body>
+<header>
+	<img src="images/town_hall_logo.gif" alt="Town Hall logo" height="80">
+	<h2>San Joaquin Valley Town Hall</h2>
+	<h3>Celebrating our <span class="shadow">75<sup>th</sup></span> Year</h3>
+</header>
+<nav id="mobile_menu"></nav> <nav id="nav_menu">
+	<ul>
+		<li class="current">
+			<a href="/index.html"> Home </a>
+		</li>
+		<li>
+			<a href="/index.html"> Speakers </a>
+		</li>
+		<li>
+			<a href="/index.html"> Luncheons </a>
+		</li>
+		<li>
+			<a href="/index.html"> Tickets </a>
+		</li>
+		<li>
+			<a href="/index.html"> About us </a>
+
+			<ul>
+				<li>
+					<a href="#"> Our History </a>
+				</li>
+
+				<li>
+					<a href="#"> Board of Directors </a>
+				</li>
+
+				<li>
+					<a href="#"> Past Speakers </a>
+				</li>
+
+				<li>
+					<a href="#"> Contact Information </a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+<main>
+	<section>
+		<h2>Our Mission</h2>
+		<p>San Joaquin Valley Town Hall is a non-profit organization that is run by an
+			all-volunteer board of directors. Our mission is to bring nationally and
+			internationally renowned, thought-provoking speakers who inform, educate,
+			and entertain our audience! As one or our members told us:</p>
+		<blockquote>&ldquo;Each year I give a ticket package to each of our family members.
+			I think of it as the gift of knowledge...and that is priceless.&rdquo;</blockquote>
+		<h1>Speaker of the Month</h1>
+		<article>
+			<h2>Fossil Threads in the Web of Life</h2>
+			<img src="images/sampson_dinosaur.jpg" alt="Scott Sampson with dinosaur">
+			<h3>February<br>
+				Scott Sampson</h3>
+			<p>What's 75 million years old and brand spanking new? A teenage Utahceratops!
+				Come to the Saroyan, armed with your best dinosaur roar, when Scott Sampson, Research
+				Curator at the Utah Museum of Natural History, steps to the podium. Sampson's research
+				has focused on the ecology and evolution of late Cretaceous dinosaurs and he has conducted
+				fieldwork in a number of countries in Africa.</p>
+			<p><a href="speakers/c7_sampson.html">Read more.</a> Or Play Video. </p>
+		</article>
+
+		<h2>Our Ticket Packages</h2>
+		<ul>
+			<li>Season Package: $95</li>
+			<li>Patron Package: $200</li>
+			<li>Single Speaker: $25</li>
+		</ul>
+	</section>
+
+	<aside>
+		<h2>Guest speakers</h2>
+		<h3>October<br><a href="speakers/brancaccio.html">David Brancaccio</a></h3>
+		<img src="images/brancaccio75.jpg" alt="David Brancaccio photo">
+		<h3>November<br><a href="speakers/sorkin.html">Andrew Ross Sorkin</a></h3>
+		<img src="images/sorkin75.jpg" alt="Andrew Ross Sorkin photo">
+		<h3>January<br><a href="speakers/chua.html">Amy Chua</a></h3>
+		<img src="images/chua75.jpg" alt="Amy Chua photo">
+		<h3>February<br><a href="speakers/c7_sampson.html">Scott Sampson</a></h3>
+		<img src="images/sampson75.jpg" alt="Scott Sampson photo">
+	</aside>
+</main>
+<footer>
+	<p>&copy; Sydney Dizon 4/11/2023</p>
+</footer>
+<script>
+	(function (e, t, n) {
+		var r = {
+			label: "MENU",
+			duplicate: true,
+			duration: 200,
+			easingOpen: "swing",
+			easingClose: "swing",
+			closedSymbol: "&#9658;",
+			openedSymbol: "&#9660;",
+			prependTo: "body",
+			parentTag: "a",
+			closeOnClick: false,
+			allowParentLinks: false
+		}, i = "slicknav", s = "slicknav";
+		e.fn[i] = function (n) {
+			return this.each(function () {
+				function h(e) {
+					var t = e.data("menu");
+					if (!t) {
+						t = {};
+						t.arrow = e.children("." + s + "_arrow");
+						t.ul = e.next("ul");
+						t.parent = e.parent();
+						e.data("menu", t)
+					}
+					if (e.parent().hasClass(s + "_collapsed")) {
+						t.arrow.html(o.openedSymbol);
+						t.parent.removeClass(s + "_collapsed");
+						p(t.ul, true)
+					} else {
+						t.arrow.html(o.closedSymbol);
+						t.parent.addClass(s + "_collapsed");
+						p(t.ul, true)
+					}
+				}
+				function p(e, t) {
+					var n = v(e);
+					var r = 0;
+					if (t) r = o.duration;
+					if (e.hasClass(s + "_hidden"))
+					{
+						e.removeClass(s + "_hidden");
+						e.slideDown(r, o.easingOpen);
+						e.attr("aria-hidden", "false");
+						n.attr("tabindex", "0");
+						d(e, false)
+					} else {
+						e.addClass(s + "_hidden");
+						e.slideUp(r, o.easingClose, function () {
+							e.attr("aria-hidden", "true");
+							n.attr("tabindex", "-1");
+							d(e, true);
+							e.hide()
+						})
+					}
+				}
+				function d(t, n) {
+					var r = t.children("li").children("ul").not("." + s + "_hidden");
+					if (!n) {
+						r.each(function () {
+							var t = e(this);
+							t.attr("aria-hidden", "false");
+							var r = v(t);
+							r.attr("tabindex", "0");
+							d(t, n)
+						})
+					} else {
+						r.each(function () {
+							var t = e(this);
+							t.attr("aria-hidden", "true");
+							var r = v(t);
+							r.attr("tabindex", "-1");
+							d(t, n)
+						})
+					}
+				}
+				function v(e) {
+					var t = e.data("menu");
+					if (!t) {
+						t = {};
+						var n = e.children("li");
+						var r = n.children("a");
+						t.links = r.add(n.children("." + s + "_item"));
+						e.data("menu", t)
+					}
+					return t.links
+				}
+				function m(t) {
+					if (!t) {
+						e("." + s + "_item, ." + s + "_btn").css("outline", "none")
+					} else {
+						e("." + s + "_item, ." + s + "_btn").css("outline", "")
+					}
+				}
+				var i = e(this);
+				var o = e.extend({}, r, n);
+				if (o.duplicate) {
+					var u = i.clone();
+					u.removeAttr("id");
+					u.find("*").each(function (t, n) {
+						e(n).removeAttr("id")
+					})
+				} else var u = i;
+				var a = s + "_icon";
+				if (o.label == "") {
+					a += " " + s + "_no-text"
+				}
+				if (o.parentTag == "a") {
+					o.parentTag = 'a href="#"'
+				}
+				u.attr("class", s + "_nav");
+				var f = e('<div class="' + s + '_menu"></div>');
+				var l = e("<" + o.parentTag + ' aria-haspopup="true" tabindex="0" class="' + s + '_btn"><span class="' + s + '_menutxt">' + o.label + '</span><span class="' + a + '"><span class="' + s + '_icon-bar"></span><span class="' + s + '_icon-bar"></span><span class="' + s + '_icon-bar"></span></span></a>');
+				e(f).append(l);
+				e(o.prependTo).prepend(f);
+				f.append(u);
+				var c = u.find("li");
+				e(c).each(function () {
+					var t = e(this);
+					data = {};
+					data.children = t.children("ul").attr("role", "menu");
+					t.data("menu", data);
+					if (data.children.length > 0) {
+						var n = t.contents();
+						var r = [];
+						e(n).each(function () {
+							if (!e(this).is("ul")) {
+								r.push(this)
+							} else {
+								return false
+							}
+						});
+						var i = e(r).wrapAll("<" + o.parentTag + ' role="menuitem" aria-haspopup="true" tabindex="-1" class="' + s + '_item"/>').parent();
+						t.addClass(s + "_collapsed");
+						t.addClass(s + "_parent");
+						e(r).last().after('<span class="' + s + '_arrow">' + o.closedSymbol + "</span>")
+					} else if (t.children().length == 0) {
+						t.addClass(s + "_txtnode")
+					}
+					t.children("a").attr("role", "menuitem").click(function () {
+						if (o.closeOnClick) e(l).click()
+					})
+				});
+				e(c).each(function () {
+					var t = e(this).data("menu");
+					p(t.children, false)
+				});
+				p(u, false);
+				u.attr("role", "menu");
+				e(t).mousedown(function () {
+					m(false)
+				});
+				e(t).keyup(function () {
+					m(true)
+				});
+				e(l).click(function (e) {
+					e.preventDefault();
+					p(u, true)
+				});
+				u.on("click", "." + s + "_item", function (t) {
+					t.preventDefault();
+					h(e(this))
+				});
+				e(l).keydown(function (e) {
+					var t = e || event;
+					if (t.keyCode == 13) {
+						e.preventDefault();
+						p(u, true)
+					}
+				});
+				u.on("keydown", "." + s + "_item", function (t) {
+					var n = t || event;
+					if (n.keyCode == 13) {
+						t.preventDefault();
+						h(e(t.target))
+					}
+				});
+				if (o.allowParentLinks) {
+					e("." + s + "_item a").click(function (e) {
+						e.stopImmediatePropagation()
+					})
+				}
+			})
+		}
+	})
+	(jQuery, document, window)
+</script>
+</body>
+</html>
